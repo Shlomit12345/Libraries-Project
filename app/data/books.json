@@ -1,0 +1,25 @@
+[
+    {
+        "catalogueNum": "001",
+        "name": "Anna Karenina",
+        "author": "Leo Tolstoy",
+        "PublishingHouse": "Penguin",
+        "borrow": {
+            "readerId": "123123",
+            "borrowDate": "20180101",
+            "reminderDateSent": "20180202"
+        }
+    },
+    {
+        "catalogueNum": "002",
+        "name": "The Road",
+        "author": "Cormac McCarthy",
+        "PublishingHouse": "Picador",
+        "borrow": {
+            "readerId": "456456",
+            "borrowDate": "20180111",
+            "reminderDateSent": "20180212"
+        }
+    }
+]
+
