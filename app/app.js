@@ -10,3 +10,9 @@ app.config(function($routeProvider) {
           templateUrl : "app/login/login.html"
         })
     });
+
+// TODO: Delete this later
+app.controller("testCtrl", function($scope) {
+  $scope.bla = "kuku";
+})
+ 
