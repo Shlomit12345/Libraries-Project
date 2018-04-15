@@ -2,7 +2,7 @@
     {
         "id": "123123",
         "fname": "ניר",
-        "lnama": "חנס",
+        "lname": "חנס",
         "email": "nir@nir.com",
         "password": "123123",
         "phone": "03-12312312",
@@ -12,7 +12,7 @@
     {
         "id": "112233",
         "fname": "מיקי",
-        "lnama": "מאוס",
+        "lname": "מאוס",
         "email": "mickey@mouse.com",
         "password": "abcsef",
         "phone": "03-45624752",
