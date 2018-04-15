@@ -1,0 +1,12 @@
+* {
+    font-family:Arial;
+    text-align:right;
+    direction:rtl;
+    /* margin:0;
+    padding:0; */
+ }
+
+ .lib_logo {
+    height:60px;
+    width:75px;
+ }
