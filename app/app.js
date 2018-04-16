@@ -10,6 +10,21 @@ app.config(function($routeProvider) {
           templateUrl : "app/login/login.html",
           controller: 'loginCtrl'
         })
+        .when("/books", {
+          templateUrl : "app/books/books.html"//,
+          // controller: 'loginCtrl'
+        })
+        .when("/books:index", {
+          templateUrl : "app/books/bookDetails.html"//,
+          // controller: 'loginCtrl'
+        })
+        .when("/readers", {
+          templateUrl : "app/readers/readers.html"//,
+          // controller: 'loginCtrl'
+        })
+        .otherwise({
+          redirectTo: "/"
+        })
     });
 
 // TODO: Delete this later
