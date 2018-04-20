@@ -19,8 +19,8 @@ app.config(function($routeProvider) {
           // controller: 'loginCtrl'
         })
         .when("/readers", {
-          templateUrl : "app/readers/readers.html"//,
-          // controller: 'loginCtrl'
+          templateUrl : "app/readers/readers.html",
+          controller: 'readersCtrl'
         })
         .otherwise({
           redirectTo: "/"
