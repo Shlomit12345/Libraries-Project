@@ -1,5 +1,8 @@
-app.controller('booksCtrl', function($scope, activeUserService) {
+app.controller('booksCtrl', function($scope, activeUserService, $location) {
     
-        $scope.test = "aaaasssssblabla"
+    if (!activeUserService.isLoggedIn()) {
+                $location.path("/");
+                return;
+    }
     
     }) 

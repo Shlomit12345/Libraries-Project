@@ -28,14 +28,6 @@ app.factory("activeUserService", function($http, $log, $q) {
 
 
 
-
-
-
-
-
-
-
-
                 function load() {
                     var async = $q.defer();
             
@@ -75,7 +67,13 @@ app.factory("activeUserService", function($http, $log, $q) {
                     return activeUser;
                 }
 
-
+                function isLoggedIn() {
+                    return activeUser ? true : false;
+                }
+            
+                function logout() {
+                    activeUser = null;
+                }
 
 
 
@@ -84,7 +82,9 @@ app.factory("activeUserService", function($http, $log, $q) {
             // User: User
             load: load,
             login: login,
-            getUser: getUser
+            getUser: getUser,
+            isLoggedIn: isLoggedIn,
+            logout: logout
         }
     }) 
 
