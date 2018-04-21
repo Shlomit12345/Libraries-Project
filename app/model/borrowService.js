@@ -1,0 +1,55 @@
+app.factory('borrowService', function ($log, $http, $q) {
+    
+    var borrows = [];
+    var wasEverLoaded = false;
+
+    // reader Constructor
+    function Borrow(plainBorrow) {
+        this.id = plainBorrow.id;
+        this.bookId = plainBorrow.bookId;
+        this.readerId = plainBorrow.readerId;
+        this.borrowDate = plainBorrow.borrowDate;
+        this.reminderdateSent = plainReader.reminderdateSent;
+      
+    }
+
+
+    function load(user) {
+        var async = $q.defer();
+        
+
+        // Checking if the borrows were ever loaded
+        if (wasEverLoaded) {
+            // Immediatly resolving the promise since borrows are already available
+            async.resolve();
+        } else {
+            // Loading the data from JSON
+            $http.get("app/data/borrows.json").then(function (response) {
+                // on success  
+                borrows.splice(0, borrows.length);
+               
+                //alert("response.data.length="+response.data.length);
+                $log.debug("BOOKAPP: " + JSON.stringify(response));
+                for (var i = 0; i < response.data.length; i++) {
+                    borrows.push(new Borrow(response.data[i]));
+                
+                }
+                wasEverLoaded = true;
+                async.resolve();
+
+            }, function (response) {
+                
+                // on failure
+                $log.error("BOOKAPP: error in getting borrows json - " + JSON.stringify(response));
+                async.reject();
+            });
+        }
+
+        return async.promise;
+    }
+    return {
+        borrows: borrows,
+        load: load
+    }
+
+}) 

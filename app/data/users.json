@@ -5,7 +5,7 @@
         "lname": "חנס",
         "email": "nir@nir.com",
         "password": "123123",
-        "phone": "03-12312312",
+        "phone": "0312312312",
         "address": "רחוב יצחק רבין 15, תל אביב",
         "borrowId": "1",
         "role": "קורא"
@@ -16,7 +16,7 @@
         "lname": "מאוס",
         "email": "mickey@mouse.com",
         "password": "abcsef",
-        "phone": "03-45624752",
+        "phone": "0345624752",
         "address": "רחוב וולפסון 42, ראשון לציון",
         "borrowId": "2",
         "role": "קורא"
@@ -27,7 +27,7 @@
         "lname": "סימוני",
         "email": "hanna@simoni.com",
         "password": "asdfg",
-        "phone": "03-52585877",
+        "phone": "0352585877",
         "address": "רחוב רמז 11, ראשון לציון",
         "borrowId": "",
         "role": "ספרנית"

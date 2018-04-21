@@ -2,5 +2,74 @@
 
 <div class="container">
     <h1>רשימת קוראים</h1>
-    <p>כאן תוצג רשימת קוראים</p>
+    
 </div>
+
+    
+    <div class="catalog-search">
+    <p> חפש לפי:</p>
+    <label for="searchReaderFName">שם פרטי:</label> <input type="text" id="searchReaderFName" ng-model="searchReaderFName">
+    <label for="searchReaderLName">שם משפחה:</label> <input type="text" id="searchReaderLName" ng-model="searchReaderLName">
+    <label for="searchreaderId">ת.ז:</label> <input type="text" id="searchreaderId" ng-model="searchreaderId">
+    <br>
+    <br>
+    </div>
+    <!-- <p>מיין לפי:</p>
+    <select class="catalog-selection" ng-model="orderProp">
+       <option value="name">שם הספר</option>
+       <option value="author">שם המחבר</option>
+    </select>
+    <br>
+    <br>
+    <br> -->
+    
+    <div class="row">
+            <!-- <div class="col-md-4" ng-repeat="actor in actors | filter: searchText | filter: filterBirthMonth | orderBy: orderProp" ng-click="toggleActSelected(actor)"> -->
+    
+            <div class="col-md-4" ng-repeat="reader in readers | filter: searchBook | filter: searchAuthor">
+    
+              <div class="card text-center" ng-class="{selected: actor.selected}" >
+                <div class="card-body" >
+                  <!-- <img class="card-img-top" src="{{book.coverImg}}" alt="{{book.name}}"> -->
+                  <h4 class="card-title" >פרטי הקורא</h4>
+                  <p>ת.ז: {{reader.id}}</p>
+                  <p>שם הקורא: {{reader.fname}} {{reader.lname}}</p>
+                                 
+                  <p>אימייל: {{reader.email}}</p>
+                  <p>טלפון: {{reader.phone}}</p>
+                  <p>כתובת: {{reader.address}}</p>
+    
+
+                  <!-- <div class="col-md-4" ng-repeat="reader in readers | filter: searchBook | filter: searchAuthor">
+    
+                        <div class="card text-center" ng-class="{selected: actor.selected}" >
+                          <div class="card-body" > -->
+                            <!-- <img class="card-img-top" src="{{book.coverImg}}" alt="{{book.name}}"> -->
+
+
+
+
+
+                            <!-- <h4 class="card-title" >פרטי השאלה</h4>
+                            <p>ת.ז: {{borrow.id}}</p>
+                            <p>שם הקורא: {{reader.fname}} {{reader.lname}}</p>
+                                           
+                            <p>אימייל: {{reader.email}}</p>
+                            <p>טלפון: {{reader.phone}}</p>
+                            <p>כתובת: {{reader.address}}</p> -->
+              
+
+
+                            
+                        </div>
+                      </div>
+                    </div>  -->
+
+
+
+
+              </div>
+            </div>
+          </div> 
+
+         </div>
