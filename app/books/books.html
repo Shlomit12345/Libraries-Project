@@ -23,7 +23,7 @@
 <div class="row">
         <!-- <div class="col-md-4" ng-repeat="actor in actors | filter: searchText | filter: filterBirthMonth | orderBy: orderProp" ng-click="toggleActSelected(actor)"> -->
 
-        <div class="col-md-4" ng-repeat="book in books | filter: searchBook | filter: searchAuthor">
+        <div class="col-md-4" ng-repeat="book in books | filter: searchBook | filter: searchAuthor" ng-click="openBook(book)">
 
           <div class="card text-center" ng-class="{selected: actor.selected}" >
             <div class="card-body" >

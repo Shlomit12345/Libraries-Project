@@ -14,9 +14,9 @@ app.config(function($routeProvider) {
           templateUrl : "app/books/books.html",
           controller: 'booksCtrl'
         })
-        .when("/books:index", {
-          templateUrl : "app/books/bookDetails.html"//,
-          // controller: 'loginCtrl'
+        .when("/books/:index", {
+          templateUrl : "app/books/bookDetails.html",
+          controller: 'bookDetailsCtrl'
         })
         .when("/readers", {
           templateUrl : "app/readers/readers.html",

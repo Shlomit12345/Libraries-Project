@@ -9,7 +9,7 @@ app.factory('bookService', function ($log, $http, $q) {
             this.coverImg = plainBook.coverImg;
             this.name = plainBook.name;
             this.author = plainBook.author;
-            this.PublishingHouse = plainBook.PublishingHouse;
+            this.publishingHouse = plainBook.publishingHouse;
             this.borrowId = plainBook.borrowId;
         }
     

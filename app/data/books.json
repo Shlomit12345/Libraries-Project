@@ -4,7 +4,7 @@
         "coverImg": "http://www.am-oved.co.il/Media/Uploads/%D7%A2%D7%98%D7%99%D7%A4%D7%94_-_%D7%90%D7%A0%D7%94_%D7%A7%D7%90%D7%A8%D7%A0%D7%99%D7%A0%D7%94(1).jpg",
         "name": "אנה קרנינה",
         "author": "לב טוסטוי",
-        "PublishingHouse": "עם-עובד",
+        "publishingHouse": "עם-עובד",
         "borrowId": "2"
     },
     {
@@ -12,7 +12,7 @@
         "coverImg": "https://s3-eu-west-1.amazonaws.com/simania-public-assets/bookimages/covers61/612639.jpg",
         "name": "הדרך",
         "author": "קורמאק מקארתי",
-        "PublishingHouse": "מודן",
+        "publishingHouse": "מודן",
         "borrowId": "1"
     },
     {
@@ -20,7 +20,7 @@
         "coverImg": "https://s3-eu-west-1.amazonaws.com/simania-public-assets/bookimages/covers4/46569.jpg",
         "name": "התפסן בשדה השיפון",
         "author": "ג'רום דיוויד (ג'. ד.) סלינג'ר",
-        "PublishingHouse": "עם-עובד/ספריה לעם",
+        "publishingHouse": "עם-עובד/ספריה לעם",
         "borrowId": ""
     },
     {
@@ -28,7 +28,7 @@
         "coverImg": "http://harpatka.net/arpatka/wp-content/uploads/2014/05/-%D7%95%D7%97%D7%99%D7%95%D7%AA-%D7%90%D7%97%D7%A8%D7%95%D7%AA-e1402304375694-194x280.jpg",
         "name": "משפחתי וחיות אחרות",
         "author": "ג'רלד דארל",
-        "PublishingHouse": "מודן, אוקיינוס",
+        "publishingHouse": "מודן, אוקיינוס",
         "borrowId": ""
     },
     {
@@ -36,7 +36,7 @@
         "coverImg": "https://s3-eu-west-1.amazonaws.com/simania-public-assets/bookimages/covers2/29325.jpg",
         "name": "יער נורווגי",
         "author": "הרוקי מורקמי",
-        "PublishingHouse": "כתר",
+        "publishingHouse": "כתר",
         "borrowId": ""
     }
 ]
