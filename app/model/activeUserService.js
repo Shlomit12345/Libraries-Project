@@ -8,6 +8,7 @@ app.factory("activeUserService", function($http, $log, $q) {
             this.phone = plainUser.phone;
             this.address = plainUser.address;
             this.borrowId = plainUser.borrowId;
+            this.role = plainUser.role;
         }
     
         var activeUser = null;

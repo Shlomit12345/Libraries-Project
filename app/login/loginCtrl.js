@@ -20,5 +20,3 @@ app.controller('loginCtrl', function($scope, activeUserService, $log, $location)
     }
 });
 
-
-
