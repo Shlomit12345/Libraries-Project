@@ -8,6 +8,7 @@ app.controller('booksCtrl', function($scope, activeUserService, $location, bookS
 
     bookService.load(activeUserService.getUser()).then(function() {
                 $scope.books = bookService.books;
+                
             });
 
     

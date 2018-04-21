@@ -2,11 +2,30 @@
     font-family:Arial;
     text-align:right;
     direction:rtl;
-    /* margin:0;
-    padding:0; */
+     margin:0;
+    padding:0; 
  }
 
  .lib_logo {
     height:60px;
     width:75px;
  }
+
+ .col-md-4 {
+    border: 1px solid red;
+    height: 300px;
+    width: 140px;  
+    margin: 5px;
+ }
+
+ .card-img-top {
+    border: 1px solid black;
+    height: 200px;
+    width: 120px;  
+    margin: 5px;
+ }
+
+ /* .catalog-search, .catalog-selection { */
+/* .catalog-search {
+     float: right;
+ } */

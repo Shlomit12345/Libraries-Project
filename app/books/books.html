@@ -2,7 +2,65 @@
 
 <div class="container">
     <h1>קטלוג ספרים</h1>
-    <p>כאן יוצג קטלוג ספרים</p>
 </div>
 
+<div class="catalog-search">
+<p> חפש לפי:</p>
+<label for="searchN">שם הספר:</label> <input type="text" id="searchBookName" ng-model="searchBook">
+<label for="searchB">שם המחבר:</label> <input type="text" id="searchAuthor" ng-model="searchAuthor">
+<br>
+<br>
+</div>
+<!-- <p>מיין לפי:</p>
+<select class="catalog-selection" ng-model="orderProp">
+   <option value="name">שם הספר</option>
+   <option value="author">שם המחבר</option>
+</select>
+<br>
+<br>
+<br> -->
 
+<div class="row">
+        <!-- <div class="col-md-4" ng-repeat="actor in actors | filter: searchText | filter: filterBirthMonth | orderBy: orderProp" ng-click="toggleActSelected(actor)"> -->
+
+        <div class="col-md-4" ng-repeat="book in books | filter: searchBook | filter: searchAuthor">
+
+          <div class="card text-center" ng-class="{selected: actor.selected}" >
+            <div class="card-body" >
+              <img class="card-img-top" src="{{book.coverImg}}" alt="{{book.name}}">
+              <h4 class="card-title" >{{book.name}}</h4>
+
+              <!-- <p>Birth date: {{actor.date | date}}</p>
+              <a href="{{actor.imdb}}" target="_blank">IMDB</a> -->
+          </div>
+        </div>
+      </div> 
+     </div>
+
+
+<!-- <div>  
+               <div>
+                 <label for="search">Filter:</label> <input type="text" id="search" ng-model="searchText">  
+               </div>
+               
+               <table class="table">
+                 <tr>
+                   <th ng-click="changeSort('brand')">Brand</th>
+                   <th ng-click="changeSort('model')">Model</th>
+                   <th ng-click="changeSort('year')">Year</th>
+                   <th ng-click="changeSort('km')">KM</th>
+                   <th>Km/Year</th>
+                   <th ng-click="changeSort('testDate')">Test Date</th>
+                 </tr>
+                 <tr ng-repeat="car in cars | filter: filterCar | orderBy: sortProp : false" ng-click="openCar(car)">
+                   <td>{{car.brand}}</td>
+                   <td>{{car.model}}</td>
+                   <td>{{car.year}}</td>
+                   <td>{{car.km | number}}</td>
+                   <td>{{car.kmPerYear() | number}}</td>
+                   <td>{{car.testDate | date}}</td>
+                 </tr>
+               </table>
+    </div>
+
+ -->

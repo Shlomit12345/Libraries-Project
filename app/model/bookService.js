@@ -6,6 +6,7 @@ app.factory('bookService', function ($log, $http, $q) {
         // book Constructor
         function Book(plainBook) {
             this.id = plainBook.id;
+            this.coverImg = plainBook.coverImg;
             this.name = plainBook.name;
             this.author = plainBook.author;
             this.PublishingHouse = plainBook.PublishingHouse;
@@ -27,7 +28,7 @@ app.factory('bookService', function ($log, $http, $q) {
                     // on success  
                     books.splice(0, books.length);
                    
-                    alert("response.data.length="+response.data.length);
+                    //alert("response.data.length="+response.data.length);
                     $log.debug("BOOKAPP: " + JSON.stringify(response));
                     for (var i = 0; i < response.data.length; i++) {
                         books.push(new Book(response.data[i]));
