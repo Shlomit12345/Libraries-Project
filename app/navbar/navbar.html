@@ -10,7 +10,7 @@
                         <a class="nav-link" href="#!/books">קטלוג ספרים</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#!/readers">רשימת קוראים</a>
+                    <a class="nav-link" ng-show="isLibrarian" href="#!/readers">רשימת קוראים</a>
                 </li>
                 <li class="nav-item">
                         
@@ -19,8 +19,11 @@
             </ul>
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item">
-                            <a class="nav-link" href="#">ספרנית: שם הספרנית</a>
-                        </li>
+                            <a class="nav-link" ng-show="isLibrarian" href="#">ספרנית:{{fullName}}</a>
+                    </li>
+                    <li class="nav-item">
+                                <a class="nav-link" ng-show="isReader" href="#">הקורא:{{fullName}}</a>
+                    </li>
                 <li class="nav-item">
                     <a class="nav-link" ng-click="logout()" href="#">התנתק</a>
                 </li>

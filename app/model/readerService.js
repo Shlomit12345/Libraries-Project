@@ -50,9 +50,39 @@ app.factory('readerService', function ($log, $http, $q) {
 
         return async.promise;
     }
+
+
+    function getReaderObj (id) {
+        var async = $q.defer();
+
+        // var result = false;
+        $http.get("app/data/users.json").then(function (response) {
+            // on success  
+            
+            $log.debug("BOOKAPP: " + JSON.stringify(response));
+            for (var i = 0; i < response.data.length; i++) {
+                if (id === response.data[i].borrowId) {
+                    readerObj = response.data[i];
+                }          
+            }
+            async.resolve(readerObj);
+        }, function (response) {
+            
+            // on failure
+            $log.error("BOOKAPP: error in getting borrows json - " + JSON.stringify(response));
+            async.reject();
+        });
+
+        return async.promise;
+
+    }
+
+
+
     return {
         readers: readers,
-        load: load
+        load: load,
+        getReaderObj: getReaderObj
     }
 
 }) 

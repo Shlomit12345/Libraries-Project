@@ -3,14 +3,14 @@
         "id": "1",
         "bookId": "002",
         "readerId": "123123",
-        "borrowDate": "20180101",
-        "reminderdateSent": "20180202"
+        "borrowDate": "01/01/2018",
+        "reminderdateSent": "02/02/2018"
     },
     {
         "id": "2",
         "bookId": "001",
         "readerId": "112233",
-        "borrowDate": "20180111",
-        "reminderdateSent": "20180212"
+        "borrowDate": "11/01/2018",
+        "reminderdateSent": "12/02/2018"
     }
 ] 

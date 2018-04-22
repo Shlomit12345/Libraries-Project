@@ -10,6 +10,15 @@
     <img ng-show="book.locked" src="\app\images\locked.png">
 </div>
 
+<div class="container" ng-show="isLibrarian">
+        <h1>פרטי השאלה</h1>
+        
+        <p>שם הקורא: {{readerObj.fname}} {{readerObj.lname}}</p>
+        <p>ת.ז. הקורא: {{readerObj.id}}</p>
+        <p>תאריך השאלה: {{borrowObj.borrowDate}}</p>
+        <p>תאריך החזרה: {{borrowObj.reminderdateSent}}</p>
+       
+    </div>
 
 
 
