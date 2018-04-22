@@ -7,10 +7,10 @@
     <p>שם הספר: {{book.name}}</p>
     <p>שם הסופר: {{book.author}}</p>
     <p>ההוצאה: {{book.publishingHouse}}</p>
-    <img ng-show="book.locked" src="\app\images\locked.png">
+    <img ng-show="book.borrowed" src="app\images\locked.png">
 </div>
 
-<div class="container" ng-show="isLibrarian">
+<div class="container" ng-show="isLibrarian && borrowObj">
         <h1>פרטי השאלה</h1>
         
         <p>שם הקורא: {{readerObj.fname}} {{readerObj.lname}}</p>
@@ -18,20 +18,9 @@
         <p>תאריך השאלה: {{borrowObj.borrowDate}}</p>
         <p>תאריך החזרה: {{borrowObj.reminderdateSent}}</p>
        
-    </div>
+</div>
+
+    <button ng-show="book.notBorrowed" ng-click="addActor(fNameValue, lNameValue, dateValue,imgValue, imdbValue , false)">השאלה</button>
+    <button ng-show="book.borrowed" ng-click="addActor(fNameValue, lNameValue, dateValue,imgValue, imdbValue , false)">החזרה</button>
 
 
-
-
-<!--
-
-פרטי השאלה
-שם מלא של קורא
-תז.
-תאריך השאלה
-תאריך החזרה
-תאריך תזכורת
-
-כפתור 
-מחיקת ספר
-עדכון פרטי ספר -->

@@ -29,7 +29,7 @@
         "password": "556677",
         "phone": "0352585877",
         "address": "רחוב רמז 11, ראשון לציון",
-        "borrowId": "",
+        "borrowId": null,
         "role": "ספרנית"
     }
 ] 

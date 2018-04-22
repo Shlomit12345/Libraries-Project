@@ -9,10 +9,17 @@ app.controller("bookDetailsCtrl", function ($scope, $routeParams, bookService, b
         var indexToDisplay = parseInt($routeParams.index);
     
         var currentUser = activeUserService.getUser();
-        bookService.load(currentUser).then(function () {
+
+        bookService.load().then(function () {
             $scope.book = bookService.books[indexToDisplay];
             borrowService.isBorrowed($scope.book.id).then(function(response){
-                $scope.book.locked = response;    
+                if (response) {
+                    $scope.book.borrowed = true; 
+                    $scope.book.notBorrowed = false; 
+                } else {
+                    $scope.book.borrowed = false;
+                    $scope.book.notBorrowed = true; 
+                }   
             })
 
 
@@ -25,14 +32,17 @@ app.controller("bookDetailsCtrl", function ($scope, $routeParams, bookService, b
         
             }
 
-            borrowService.getBorrowObj($scope.book.id).then(function(response){
-                $scope.borrowObj = response; 
-                readerService.getReaderObj($scope.borrowObj.id).then(function(response){
-                    $scope.readerObj = response; 
-                    
-                })
-            })
+            $scope.borrowObj = null;
             
+            if ($scope.book.borrowId) {
+                borrowService.getBorrowObj($scope.book.borrowId).then(function(response){
+                    $scope.borrowObj = response; 
+                    readerService.getReaderObj($scope.book.borrowId).then(function(response){
+                        $scope.readerObj = response; 
+                        
+                    })
+                })
+            }
 
 
         

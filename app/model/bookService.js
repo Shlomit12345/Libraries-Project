@@ -14,7 +14,7 @@ app.factory('bookService', function ($log, $http, $q, borrowService ) {
         }
     
 
-        function load(user) {
+        function load() {
             var async = $q.defer();
             
     
@@ -34,10 +34,6 @@ app.factory('bookService', function ($log, $http, $q, borrowService ) {
                         books.push(new Book(response.data[i]));
                     
                     }
-
-
-
-
 
                     wasEverLoaded = true;
                     async.resolve();

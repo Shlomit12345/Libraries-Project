@@ -83,7 +83,7 @@ app.factory('borrowService', function ($log, $http, $q) {
             
             $log.debug("BOOKAPP: " + JSON.stringify(response));
             for (var i = 0; i < response.data.length; i++) {
-                if (id === response.data[i].bookId) {
+                if (id === response.data[i].id) {
                     borrowObj = response.data[i];
                 }          
             }

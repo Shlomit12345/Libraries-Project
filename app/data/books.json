@@ -21,7 +21,7 @@
         "name": "התפסן בשדה השיפון",
         "author": "ג'רום דיוויד (ג'. ד.) סלינג'ר",
         "publishingHouse": "עם-עובד/ספריה לעם",
-        "borrowId": ""
+        "borrowId": null
     },
     {
         "id": "004",
@@ -29,7 +29,7 @@
         "name": "משפחתי וחיות אחרות",
         "author": "ג'רלד דארל",
         "publishingHouse": "מודן, אוקיינוס",
-        "borrowId": ""
+        "borrowId": null
     },
     {
         "id": "005",
@@ -37,7 +37,7 @@
         "name": "יער נורווגי",
         "author": "הרוקי מורקמי",
         "publishingHouse": "כתר",
-        "borrowId": ""
+        "borrowId": null
     }
 ]
 
