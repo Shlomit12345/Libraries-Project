@@ -24,7 +24,7 @@ app.factory('borrowService', function ($log, $http, $q) {
             async.resolve();
         } else {
             // Loading the data from JSON
-            $http.get("app/data/borrows.json").then(function (response) {
+            $http.get("app/data/borrow.json").then(function (response) {
                 // on success  
                 borrows.splice(0, borrows.length);
                
@@ -47,9 +47,39 @@ app.factory('borrowService', function ($log, $http, $q) {
 
         return async.promise;
     }
+
+
+    function isBorrowed (id) {
+        var async = $q.defer();
+
+        var result = false;
+        $http.get("app/data/borrow.json").then(function (response) {
+            // on success  
+            
+            $log.debug("BOOKAPP: " + JSON.stringify(response));
+            for (var i = 0; i < response.data.length && result === false; i++) {
+                if (id === response.data[i].bookId) {
+                    result = true;
+                }          
+            }
+            async.resolve(result);
+        }, function (response) {
+            
+            // on failure
+            $log.error("BOOKAPP: error in getting borrows json - " + JSON.stringify(response));
+            async.reject();
+        });
+
+        return async.promise;
+
+    }
+
+
+
     return {
         borrows: borrows,
-        load: load
+        load: load,
+        isBorrowed: isBorrowed
     }
 
 }) 

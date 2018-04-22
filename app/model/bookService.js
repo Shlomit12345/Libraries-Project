@@ -1,4 +1,4 @@
-app.factory('bookService', function ($log, $http, $q) {
+app.factory('bookService', function ($log, $http, $q, borrowService ) {
     
         var books = [];
         var wasEverLoaded = false;
@@ -34,6 +34,11 @@ app.factory('bookService', function ($log, $http, $q) {
                         books.push(new Book(response.data[i]));
                     
                     }
+
+
+
+
+
                     wasEverLoaded = true;
                     async.resolve();
     
@@ -47,9 +52,15 @@ app.factory('bookService', function ($log, $http, $q) {
     
             return async.promise;
         }
+
+ 
+
+
+
         return {
             books: books,
             load: load
+            
         }
     
     }) 

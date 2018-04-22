@@ -16,6 +16,7 @@ app.controller('booksCtrl', function($scope, activeUserService, $location, bookS
   $scope.openBook = function (book) {
      
     $location.path('/books/' + $scope.books.indexOf(book));
+    
 }
 
     
