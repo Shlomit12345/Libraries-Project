@@ -12,5 +12,12 @@
         "readerId": "112233",
         "borrowDate": "11/01/2018",
         "reminderdateSent": "12/02/2018"
+    },
+    {
+        "id": "3",
+        "bookId": "004",
+        "readerId": "987654",
+        "borrowDate": "13/01/2018",
+        "reminderdateSent": "14/02/2018"
     }
 ] 

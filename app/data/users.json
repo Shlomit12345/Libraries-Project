@@ -31,5 +31,38 @@
         "address": "רחוב רמז 11, קרית הוד",
         "borrowId": null,
         "role": "ספרנית"
+    },
+    {
+        "id": "987654",
+        "fname": "דני",
+        "lname": "סנדרסון",
+        "email": "danny@sanderson.com",
+        "password": "987654",
+        "phone": "0395458523",
+        "address": "רחוב יהודה הלוי 11, קרית הוד",
+        "borrowId": 3,
+        "role": "קורא"
+    },
+    {
+        "id": "999888",
+        "fname": "יהודה",
+        "lname": "עדר",
+        "email": "yehuda@eder.com",
+        "password": "999888",
+        "phone": "0352487589",
+        "address": "רחוב בגין 22, קרית הוד",
+        "borrowId": null,
+        "role": "קורא"
+    },
+    {
+        "id": "775588",
+        "fname": "רבקה",
+        "lname": "כהן",
+        "email": "rivka@cohen.com",
+        "password": "775588",
+        "phone": "0345685214",
+        "address": "רחוב רוקח 18, קרית הוד",
+        "borrowId": null,
+        "role": "קורא"
     }
 ] 
