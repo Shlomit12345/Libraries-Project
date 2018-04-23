@@ -1,17 +1,15 @@
 <librarian-navbar></librarian-navbar>
 
-<div class="container catalog-title">
-	קטלוג הספרים
-</div>
+<div class="container catalog-title">קטלוג הספרים</div>
 
 <div class="catalog-search">
 	<span class="search-part">חיפוש:</span>
 	<span class="search-part">
-        <input class="search-input" placeholder="לפי שם" type="text" id="searchBookName" ng-model="searchBook">
-    </span>
+    <input class="search-input" placeholder="לפי שם" type="text" id="searchBookName" ng-model="searchBook">
+  </span>
 	<span class="search-part">
-        <input class="search-input" placeholder="לפי מחבר" type="text" id="searchAuthor" ng-model="searchAuthor">
-    </span>
+    <input class="search-input" placeholder="לפי מחבר" type="text" id="searchAuthor" ng-model="searchAuthor">
+  </span>
 </div>
 <!-- <p>מיין לפי:</p>
 <select class="catalog-selection" ng-model="orderProp">
@@ -24,7 +22,6 @@
 
 <div class="row">
 	<!-- <div class="col-md-4" ng-repeat="actor in actors | filter: searchText | filter: filterBirthMonth | orderBy: orderProp" ng-click="toggleActSelected(actor)"> -->
-
 	<div class="col-md-4 book-box" ng-repeat="book in books | filter: {name: searchBook, author: searchAuthor}" ng-click="openBook(book)">
 		<div class="card book-card text-center" ng-class="{selected: actor.selected}">
 			<div class="card-body book">
@@ -35,9 +32,6 @@
 				<a href=""><img class="card-img-top" src="{{book.coverImg}}" alt="{{book.name}}"></a>
 				<h4 class="card-title book-name">{{book.name}}</h4>
 				<h4 class="card-title author">מאת: {{book.author}}</h4>
-
-				<!-- <p>Birth date: {{actor.date | date}}</p>
-				<a href="{{actor.imdb}}" target="_blank">IMDB</a> -->
 			</div>
 		</div>
 	</div>

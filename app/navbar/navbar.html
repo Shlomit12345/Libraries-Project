@@ -1,5 +1,4 @@
 <nav class="navbar navbar-expand-md navbar-light top-navbar">
-        <!-- <a class="navbar-brand" href="#">Cars App</a> -->
         <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -13,17 +12,16 @@
                     <a class="nav-link" ng-show="isLibrarian" href="#!/readers">רשימת קוראים</a>
                 </li>
                 <li class="nav-item">
-                        
-                        <a class="nav-link" href="#!/login">פרטי ספריה</a>
+                    <a class="nav-link" href="#!/login">פרטי ספריה</a>
                 </li>
             </ul>
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item">
-                            <a class="nav-link" ng-show="isLibrarian">ספרנית:{{fullName}}</a>
-                    </li>
-                    <li class="nav-item">
-                                <a class="nav-link" ng-show="isReader">הקורא:{{fullName}}</a>
-                    </li>
+                <li class="nav-item">
+                    <a class="nav-link" ng-show="isLibrarian">ספרנית:{{fullName}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" ng-show="isReader">הקורא:{{fullName}}</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" ng-click="logout()" href="#">התנתק</a>
                 </li>

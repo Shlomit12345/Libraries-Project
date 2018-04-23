@@ -7,7 +7,6 @@ app.controller('booksCtrl', function($scope, activeUserService, $location, bookS
 
 	bookService.load().then(function() {
 		$scope.books = bookService.books;
-
 	});
 
 	// Open book details

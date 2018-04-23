@@ -3,8 +3,7 @@
 <div class="container catalog-title">
 רשימת קוראים
 </div>
-
-    
+ 
     <div class="catalog-search">
     <p> חפש לפי:</p>
     <label for="searchReaderFName">שם פרטי:</label> <input type="text" id="searchReaderFName" ng-model="searchReaderFName">
@@ -25,9 +24,7 @@
     <div class="readers-list">
         <div ng-repeat="reader in readers | filter: searchBook | filter: searchAuthor">
             <div class="reader-row-header" ng-click="selectReader(reader.id)">
-                <a class="reader-row-link" href="">
-                {{reader.fname}} {{reader.lname}} - {{reader.id}}
-            </a>
+                <a class="reader-row-link" href="">{{reader.fname}} {{reader.lname}} - {{reader.id}}</a>
             </div>
             <div ng-show="selectedReaderId === reader.id" class="selected-reader-box">
                 <h4 class="card-title" >{{reader.fname}} {{reader.lname}}</h4>

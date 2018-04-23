@@ -16,9 +16,6 @@ app.controller('navbarCtrl', function($scope, activeUserService, $location) {
     }
 
     $scope.fullName = currentUser.fname + " " + currentUser.lname;
-    
-
-
 })
 
 

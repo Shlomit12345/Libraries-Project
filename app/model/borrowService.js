@@ -10,13 +10,10 @@ app.factory('borrowService', function ($log, $http, $q) {
         this.readerId = plainBorrow.readerId;
         this.borrowDate = plainBorrow.borrowDate;
         this.reminderdateSent = plainReader.reminderdateSent;
-      
     }
-
 
     function load(user) {
         var async = $q.defer();
-        
 
         // Checking if the borrows were ever loaded
         if (wasEverLoaded) {
@@ -27,18 +24,13 @@ app.factory('borrowService', function ($log, $http, $q) {
             $http.get("app/data/borrow.json").then(function (response) {
                 // on success  
                 borrows.splice(0, borrows.length);
-               
-                //alert("response.data.length="+response.data.length);
                 $log.debug("BOOKAPP: " + JSON.stringify(response));
                 for (var i = 0; i < response.data.length; i++) {
                     borrows.push(new Borrow(response.data[i]));
-                
                 }
                 wasEverLoaded = true;
                 async.resolve();
-
             }, function (response) {
-                
                 // on failure
                 $log.error("BOOKAPP: error in getting borrows json - " + JSON.stringify(response));
                 async.reject();
@@ -48,14 +40,11 @@ app.factory('borrowService', function ($log, $http, $q) {
         return async.promise;
     }
 
-
     function isBorrowed (id) {
         var async = $q.defer();
-
         var result = false;
         $http.get("app/data/borrow.json").then(function (response) {
             // on success  
-            
             $log.debug("BOOKAPP: " + JSON.stringify(response));
             for (var i = 0; i < response.data.length && result === false; i++) {
                 if (id === response.data[i].bookId) {
@@ -64,23 +53,18 @@ app.factory('borrowService', function ($log, $http, $q) {
             }
             async.resolve(result);
         }, function (response) {
-            
             // on failure
             $log.error("BOOKAPP: error in getting borrows json - " + JSON.stringify(response));
             async.reject();
         });
-
         return async.promise;
-
     }
 
     function getBorrowObj (id) {
         var async = $q.defer();
-
         var result = false;
         $http.get("app/data/borrow.json").then(function (response) {
             // on success  
-            
             $log.debug("BOOKAPP: " + JSON.stringify(response));
             for (var i = 0; i < response.data.length; i++) {
                 if (id === response.data[i].id) {
@@ -89,17 +73,12 @@ app.factory('borrowService', function ($log, $http, $q) {
             }
             async.resolve(borrowObj);
         }, function (response) {
-            
             // on failure
             $log.error("BOOKAPP: error in getting borrows json - " + JSON.stringify(response));
             async.reject();
         });
-
         return async.promise;
-
     }
-
-
 
     return {
         borrows: borrows,
@@ -107,5 +86,4 @@ app.factory('borrowService', function ($log, $http, $q) {
         isBorrowed: isBorrowed,
         getBorrowObj: getBorrowObj
     }
-
 }) 

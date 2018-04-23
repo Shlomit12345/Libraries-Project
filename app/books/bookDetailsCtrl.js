@@ -1,5 +1,5 @@
 
-app.controller("bookDetailsCtrl", function ($scope, $routeParams, bookService, borrowService, readerService, activeUserService,  $location) {
+app.controller("bookDetailsCtrl", function ($scope, $routeParams, bookService, borrowService, readerService, activeUserService, $location) {
 
     // This is an authotization check. If the user is not logged going back to the home screen
     if (!activeUserService.isLoggedIn()) {
@@ -8,7 +8,6 @@ app.controller("bookDetailsCtrl", function ($scope, $routeParams, bookService, b
     }
 
     var indexToDisplay = parseInt($routeParams.index);
-
     var currentUser = activeUserService.getUser();
 
     bookService.load().then(function () {
@@ -23,14 +22,10 @@ app.controller("bookDetailsCtrl", function ($scope, $routeParams, bookService, b
             }
         })
 
-
-
         if (currentUser.role === "ספרנית") {
             $scope.isLibrarian = true;
-
         } else {
             $scope.isLibrarian = false;
-
         }
 
         $scope.borrowObj = null;

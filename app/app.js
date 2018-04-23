@@ -27,7 +27,6 @@ app.config(function($routeProvider) {
         })
     });
 
-// TODO: Delete this later
 app.controller("testCtrl", function($scope, activeUserService) {
   // var user = new activeUserService.User( {
   //   "id": "112233",
@@ -39,12 +38,5 @@ app.controller("testCtrl", function($scope, activeUserService) {
   //   "address": "רחוב וולפסון 42, ראשון לציון",
   //   "borrowId": "2"
   // })
-  
-    // activeUserService.load().then(function() {
-    //     activeUserService.login("112233", "abcsef");
-    //     $scope.bla = JSON.stringify(activeUserService.getUser());
-        
-    //   })
-
 })
  

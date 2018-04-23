@@ -7,7 +7,6 @@ app.controller('readersCtrl', function($scope, activeUserService, $location, rea
 
 	readerService.load(activeUserService.getUser()).then(function() {
 		$scope.readers = readerService.readers;
-
 	});
 
 	$scope.selectReader = function(readerId) {
@@ -16,10 +15,6 @@ app.controller('readersCtrl', function($scope, activeUserService, $location, rea
 		} else {
 			$scope.selectedReaderId = readerId;
 		}
-	};
-
-	$scope.getBorrowText = function(readerId) {
-
 	};
 });
 
