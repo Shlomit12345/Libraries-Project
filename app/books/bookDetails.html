@@ -1,26 +1,36 @@
 <librarian-navbar></librarian-navbar>
 
-<div class="container">
-    <h1>פרטי הספר</h1>
-    <img class="card-img-top" src="{{book.coverImg}}" alt="{{book.name}}">
-  
-    <p>שם הספר: {{book.name}}</p>
-    <p>שם הסופר: {{book.author}}</p>
-    <p>ההוצאה: {{book.publishingHouse}}</p>
-    <img ng-show="book.borrowed" src="app\images\locked.png">
+<div class="container catalog-title">{{book.name}}</div>
+
+<div class="container single-book">
+    <img class="card-img-top-big" src="{{book.coverImg}}" alt="{{book.name}}">
+    <div class="single-book-details">
+        <p><span class="single-book-detail-label">שם הסופר:</span>{{book.author}}</p>
+        <p><span class="single-book-detail-label">ההוצאה:</span>{{book.publishingHouse}}</p>
+        <img ng-show="book.borrowed" src="app\images\locked.png">
+
+        <div class="container" ng-show="isLibrarian && borrowObj">
+            <h1>פרטי השאלה</h1>
+
+            <p>שם הקורא: {{readerObj.fname}} {{readerObj.lname}}</p>
+            <p>ת.ז. הקורא: {{readerObj.id}}</p>
+            <p>תאריך השאלה: {{borrowObj.borrowDate}}</p>
+            <p>תאריך שליחת תזכורת: {{borrowObj.reminderdateSent}}</p>
+
+        </div>
+
+        <div ng-show="book.notBorrowed" class="borrowing-title">השאלת הספר לקורא</div>
+        <div ng-show="book.notBorrowed">
+            <label for="searchreaderId">ת.ז קורא:</label>
+            <input class="borrower-id-input" type="text" id="searchreaderId" ng-model="borrowingReaderId">
+        </div>
+        <div><button ng-show="book.borrowed" ng-click="addActor(fNameValue, lNameValue, dateValue,imgValue, imdbValue , false)"
+           class="btn btn-lg borrowing-btn return" role="button">החזרה</button>
+        </div>
+        <div><button ng-show="book.notBorrowed" ng-click="addActor(fNameValue, lNameValue, dateValue,imgValue, imdbValue , false)"
+           class="btn btn-lg borrowing-btn borrow" role="button">השאלה</buttona>
+        </div>
+
+    </div>
 </div>
-
-<div class="container" ng-show="isLibrarian && borrowObj">
-        <h1>פרטי השאלה</h1>
-        
-        <p>שם הקורא: {{readerObj.fname}} {{readerObj.lname}}</p>
-        <p>ת.ז. הקורא: {{readerObj.id}}</p>
-        <p>תאריך השאלה: {{borrowObj.borrowDate}}</p>
-        <p>תאריך החזרה: {{borrowObj.reminderdateSent}}</p>
-       
-</div>
-
-    <button ng-show="book.notBorrowed" ng-click="addActor(fNameValue, lNameValue, dateValue,imgValue, imdbValue , false)">השאלה</button>
-    <button ng-show="book.borrowed" ng-click="addActor(fNameValue, lNameValue, dateValue,imgValue, imdbValue , false)">החזרה</button>
-
 

@@ -1,14 +1,14 @@
 * {
-    font-family:Arial;
-    text-align:right;
-    direction:rtl;
-     margin:0;
-    padding:0; 
+    font-family: Arial;
+    text-align: right;
+    direction: rtl;
+    margin: 0;
+    padding: 0; 
  }
 
  .lib_logo {
-    height:60px;
-    width:75px;
+    height: 60px;
+    width: 75px;
  }
 
  .col-md-4 {
@@ -18,13 +18,13 @@
  }
 
  .col-md-4.book-box {
-     max-width: 330px;
-     min-width: 330px;
-     margin: 20px 10px 60px 20px;
+    max-width: 330px;
+    min-width: 330px;
+    margin: 20px 10px 60px 20px;
  }
 
  .catalog-search {
-     margin: 30px 50px 10px 0;
+    margin: 30px 50px 10px 0;
  }
 
  .card.book-card {
@@ -32,37 +32,58 @@
  }
 
  .card-img-top {
-    border: 1px solid #000000;
+    border: 1px solid black;
     height: 200px;
     width: 125px;
     margin: 5px;
-    cursor: pointer;
  }
 
- .navbar-light.bg-light {
-     background-color: #e2edff !important;
-     border-bottom: 1px solid #bad2f7;
+ .card-img-top-big {
+    height: 400px;
+    width: 250px;
+ }
+
+ .single-book-details {
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px 80px;
+    font-size: 20px;
+ }
+
+.single-book-detail-label {
+    width: 100px;
+    display: inline-block;
+}
+
+ .navbar.top-navbar {
+    background-color: #e2edff;
+    border-bottom: 1px solid #bad2f7;
  }
 
 .navbar-light .navbar-nav .nav-link {
     color: #3d7fc5;
 }
 
+.container.single-book {
+    text-align: center;
+    padding-top: 30px;
+}
+
 .container.catalog-title {
     text-align: center;
     font-size: 56px;
-    margin: 15px 0 0 0;
     color: #3d7fc5;
+    padding-top: 15px;
 }
 
  .card-title.book-name {
-     color: #3d7fc5;
-     font-weight: bold
+    color: #3d7fc5;
+    font-weight: bold;
  }
 
 .card-title.author {
     color: #999;
-    font-size: 20px
+    font-size: 20px;
 }
 
 .card-body.book {
@@ -76,12 +97,12 @@
 }
 
 .borrowed-image {
-    margin: 5px 10px
+    margin: 5px 10px;
 }
 
 .borrowed-text {
     margin: 4px;
-    font-size: 18px
+    font-size: 18px;
 }
 
 .search-part {
@@ -90,7 +111,7 @@
 }
 
 .row {
-     margin-right: 20px;
+    margin-right: 20px;
  }
 
 .search-label {
@@ -103,29 +124,22 @@
 }
 
 .home-top-header {
-    /*background-image: url(app\images\lib_salon.png) !important;*/
     background: linear-gradient(#798673, #41574C);
-    padding: 20px 50px;
+    padding: 30px 50px;
     margin: 0;
     color: #d2dbca;
+    text-align: center;
+    font-size: 54px;
 }
 
 .jumbotron.home {
-    padding: 0 0 4rem 0;
+    padding: 0;
     background: white;
 }
 
-.lead.home {
-    margin: 30px 50px;
-}
-
-.home-image-box {
-    float: right;
-    margin-right: 50px;
-}
-
-.home-connect-btn-box {
-    float: right;
+.home-content {
+    margin-top: 50px;
+    text-align: center;
 }
 
 .home-connect-btn {
@@ -136,14 +150,48 @@
     padding-top: 29px;
     font-size: 26px;
     border-color: #41574C;
+    color: white;
 }
 
 .home-connect-btn:hover {
     background: #8e9b88;
+    border-color: #41574C;
+    color: white;
 }
 
-.my-2.home {
-    margin: 0 !important;
+.btn.btn-lg.borrowing-btn {
+    margin: 20px 80px 20px 20px;
+    width: 180px;
+    height: 50px;
+    padding-top: 2px;
+    background: #3d7fc5;
+    font-size: 26px;
+    border-color: #41574C;
+    color: white;
+}
+
+.btn.btn-lg.borrowing-btn.return {
+    margin-right: 4px;
+}
+
+.btn.btn-lg.borrowing-btn:hover {
+    background: #6393c5;
+    color: white;
+}
+
+.btn.btn-lg.borrowing-btn:active {
+    background: #6393c5;
+    color: white;
+}
+
+.borrowing-title {
+    margin: 40px 35px 20px 0;
+    font-size: 28px;
+    color: #3d7fc5;
+}
+
+.borrower-id-input {
+    width: 180px;
 }
 
 .login-welcome {
@@ -174,19 +222,28 @@
     margin-top: 10px;
 }
 
+.login-content {
+    text-align: center;
+}
+
 .login-form {
     padding: 20px;
     background: #f8f8f8;
     border: 1px solid #ddd;
+    width: 400px;
+    display: inline-block;
 }
 
 .login-library-details {
     padding-right: 70px;
+    width: 400px;
+    display: inline-block;
+    vertical-align: top;
 }
- /* .catalog-search, .catalog-selection { */
-/* .catalog-search {
-     float: right;
- } */
+
+.opening-hours {
+    margin-bottom: 40px;
+}
 
 .readers-list {
     margin: 10px 30px;
@@ -201,12 +258,11 @@
 
 .reader-row-link:hover {
     text-decoration: none;
-    color: #000000;
+    color: black;
 }
 
 .reader-row-link {
-  
-    color: #000000;
+    color: black;
 }
 
 .selected-reader-box {
@@ -221,15 +277,3 @@
     margin-bottom: 5px;
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: #ccc;
-}
-::-moz-placeholder { /* Firefox 19+ */
-    color: #ccc;
-}
-:-ms-input-placeholder { /* IE 10+ */
-    color: #ccc;
-}
-:-moz-placeholder { /* Firefox 18- */
-    color: #ccc;
-}
