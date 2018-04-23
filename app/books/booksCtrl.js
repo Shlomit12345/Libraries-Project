@@ -1,24 +1,17 @@
 app.controller('booksCtrl', function($scope, activeUserService, $location, bookService) {
-    
-    if (!activeUserService.isLoggedIn()) {
-                $location.path("/");
-                return;
-    }
 
+	if (!activeUserService.isLoggedIn()) {
+		$location.path("/");
+		return;
+	}
 
-    bookService.load().then(function() {
-                $scope.books = bookService.books;
-                
-    });
+	bookService.load().then(function() {
+		$scope.books = bookService.books;
 
+	});
 
-
-  // Open book details
-  $scope.openBook = function (book) {
-     
-    $location.path('/books/' + $scope.books.indexOf(book));
-    
-}
-
-    
-}) 
+	// Open book details
+	$scope.openBook = function(book) {
+		$location.path('/books/' + $scope.books.indexOf(book));
+	}
+});

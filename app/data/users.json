@@ -6,7 +6,7 @@
         "email": "nir@nir.com",
         "password": "123123",
         "phone": "0312312312",
-        "address": "רחוב יצחק רבין 15, תל אביב",
+        "address": "רחוב יצחק רבין 15, קרית הוד",
         "borrowId": "1",
         "role": "קורא"
     },
@@ -17,7 +17,7 @@
         "email": "mickey@mouse.com",
         "password": "abcsef",
         "phone": "0345624752",
-        "address": "רחוב וולפסון 42, ראשון לציון",
+        "address": "רחוב וולפסון 42, קרית הוד",
         "borrowId": "2",
         "role": "קורא"
     },
@@ -28,7 +28,7 @@
         "email": "hanna@simoni.com",
         "password": "556677",
         "phone": "0352585877",
-        "address": "רחוב רמז 11, ראשון לציון",
+        "address": "רחוב רמז 11, קרית הוד",
         "borrowId": null,
         "role": "ספרנית"
     }

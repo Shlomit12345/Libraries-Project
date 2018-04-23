@@ -1,21 +1,36 @@
-<div class="container">
-    <h1>ברוכים הבאים לספרית השלום</h1>
-    <h1>אצלנו קור(א)ים דברים טובים</h1>
-    <img class="lib_logo" src="app\images\lib_logo.jpg" alt="library_logo">
-    <div class="alert alert-danger" ng-show="invalidCredentails">
-                       <strong>שים לב!  </strong>ת.ז. או סיסמא שגויים.  נסה שנית
-               </div>
-    <form>
-            <h2>התחברות</h2>
-        <div class="form-group">
-          <label for="idNum">ת.ז.</label>
-          <input type="number" class="form-control" id="idNum" ng-model="idNum">
-        </div>
-        <div class="form-group">
-          <label for="pwd">סיסמא</label>
-          <input type="password" class="form-control" id="pwd" ng-model="pwd">
-        </div>
-        <button type="submit" class="btn btn-primary" ng-click="login()">התחבר</button>
-        {{test}} 
-      </form>
+<div>
+	<div class="login-welcome">
+		<span>ברוכים הבאים לספרית השלום</span>
+		<img class="lib_logo" src="app\images\lib_logo.jpg" alt="library_logo">
+	</div>
+	<div class="login-slogen">אצלנו קור(א)ים דברים טובים</div>
+	<div class="row">
+		<form class="login-form col-md-6">
+			<h2 class="login-title">התחברות</h2>
+			<div class="form-group">
+				<label for="idNum">ת.ז.</label>
+				<input type="number" class="form-control" id="idNum" ng-model="idNum">
+			</div>
+			<div class="form-group">
+				<label for="pwd">סיסמא</label>
+				<input type="password" class="form-control" id="pwd" ng-model="pwd">
+			</div>
+			<div class="alert alert-danger" ng-show="invalidCredentails">
+				<strong>שים לב! </strong>ת.ז. או סיסמא שגויים. נסה שנית
+			</div>
+			<button type="submit" class="btn btn-primary" ng-click="login()">התחבר</button>
+			{{test}}
+		</form>
+		<div class="login-library-details col-md-6">
+			<div>
+				<div><strong>שעות פתיחת הספריה</strong></div>
+				<div><span class="opening-days-part">ימי א׳, ג׳, ה׳:</span><span>19:00 - 09:00</span></div>
+				<div><span class="opening-days-part">ימי ב׳, ד׳:</span><span>17:00 - 09:00</span></div>
+				<div><span class="opening-days-part">יום ו׳ וערבי חג:</span><span>12:00 - 08:30</span></div>
+			</div>
+			<div class="lib-detail">אימייל:  hasifria.kiryat.hod@gmail.com</div>
+			<div class="lib-detail">רחוב בית הקריאה 17, קרית הוד.</div>
+			<div class="lib-detail">טלפון: 03-1234321</div>
+		</div>
+	</div>
 </div> 

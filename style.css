@@ -12,20 +12,224 @@
  }
 
  .col-md-4 {
-    border: 10px solid red;
     height: 300px;
     width: 140px;  
     margin: 5px;
  }
 
- .card-img-top {
-    border: 1px solid black;
-    height: 200px;
-    width: 120px;  
-    margin: 5px;
+ .col-md-4.book-box {
+     max-width: 330px;
+     min-width: 330px;
+     margin: 20px 10px 60px 20px;
  }
 
+ .catalog-search {
+     margin: 30px 50px 10px 0;
+ }
+
+ .card.book-card {
+    border: 2px solid #bad2f7;
+ }
+
+ .card-img-top {
+    border: 1px solid #000000;
+    height: 200px;
+    width: 125px;
+    margin: 5px;
+    cursor: pointer;
+ }
+
+ .navbar-light.bg-light {
+     background-color: #e2edff !important;
+     border-bottom: 1px solid #bad2f7;
+ }
+
+.navbar-light .navbar-nav .nav-link {
+    color: #3d7fc5;
+}
+
+.container.catalog-title {
+    text-align: center;
+    font-size: 56px;
+    margin: 15px 0 0 0;
+    color: #3d7fc5;
+}
+
+ .card-title.book-name {
+     color: #3d7fc5;
+     font-weight: bold
+ }
+
+.card-title.author {
+    color: #999;
+    font-size: 20px
+}
+
+.card-body.book {
+    position: relative;
+}
+
+.borrowed-book {
+    position: absolute;
+    left: 50px;
+    top: 23px;
+}
+
+.borrowed-image {
+    margin: 5px 10px
+}
+
+.borrowed-text {
+    margin: 4px;
+    font-size: 18px
+}
+
+.search-part {
+    margin: 0 0 0 15px;
+    color: #999;
+}
+
+.row {
+     margin-right: 20px;
+ }
+
+.search-label {
+    width: 170px;
+}
+
+.search-input {
+    padding: 0 3px;
+    width: 150px;
+}
+
+.home-top-header {
+    /*background-image: url(app\images\lib_salon.png) !important;*/
+    background: linear-gradient(#798673, #41574C);
+    padding: 20px 50px;
+    margin: 0;
+    color: #d2dbca;
+}
+
+.jumbotron.home {
+    padding: 0 0 4rem 0;
+    background: white;
+}
+
+.lead.home {
+    margin: 30px 50px;
+}
+
+.home-image-box {
+    float: right;
+    margin-right: 50px;
+}
+
+.home-connect-btn-box {
+    float: right;
+}
+
+.home-connect-btn {
+    margin: 80px 50px;
+    width: 200px;
+    height: 100px;
+    background: #798673;
+    padding-top: 29px;
+    font-size: 26px;
+    border-color: #41574C;
+}
+
+.home-connect-btn:hover {
+    background: #8e9b88;
+}
+
+.my-2.home {
+    margin: 0 !important;
+}
+
+.login-welcome {
+    text-align: center;
+    font-size: 42px;
+    padding: 30px 0 20px;
+    color: #3d7fc5;
+    background: #d9e8f7;
+}
+
+.login-slogen {
+    font-size: 64px;
+    text-align: center;
+    margin: 30px 0;
+    color: #3d7fc5;
+}
+
+.login-title {
+    color: #3d7fc5;
+}
+
+.opening-days-part {
+    width: 150px;
+    display: inline-block;
+}
+
+.lib-detail {
+    margin-top: 10px;
+}
+
+.login-form {
+    padding: 20px;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+}
+
+.login-library-details {
+    padding-right: 70px;
+}
  /* .catalog-search, .catalog-selection { */
 /* .catalog-search {
      float: right;
  } */
+
+.readers-list {
+    margin: 10px 30px;
+}
+
+.reader-row-header {
+    background: #e9f1f9;
+    border: 1px solid #ccc;
+    height: 35px;
+    padding: 5px 10px;
+}
+
+.reader-row-link:hover {
+    text-decoration: none;
+    color: #000000;
+}
+
+.reader-row-link {
+  
+    color: #000000;
+}
+
+.selected-reader-box {
+    background: #f7fbff;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+}
+
+.reader-detail {
+    width: 130px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #ccc;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: #ccc;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: #ccc;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: #ccc;
+}

@@ -7,9 +7,9 @@ app.controller("bookDetailsCtrl", function ($scope, $routeParams, bookService, b
         }
     
         var indexToDisplay = parseInt($routeParams.index);
-    
+       
         var currentUser = activeUserService.getUser();
-
+        
         bookService.load().then(function () {
             $scope.book = bookService.books[indexToDisplay];
             borrowService.isBorrowed($scope.book.id).then(function(response){
@@ -19,7 +19,7 @@ app.controller("bookDetailsCtrl", function ($scope, $routeParams, bookService, b
                 } else {
                     $scope.book.borrowed = false;
                     $scope.book.notBorrowed = true; 
-                }   
+                }      
             })
 
 
@@ -43,12 +43,5 @@ app.controller("bookDetailsCtrl", function ($scope, $routeParams, bookService, b
                     })
                 })
             }
-
-
-        
-
-
-
         })
-    
-    }) 
+    });

@@ -1,8 +1,7 @@
 <librarian-navbar></librarian-navbar>
 
-<div class="container">
-    <h1>רשימת קוראים</h1>
-    
+<div class="container catalog-title">
+רשימת קוראים
 </div>
 
     
@@ -22,54 +21,21 @@
     <br>
     <br>
     <br> -->
-    
-    <div class="row">
-            <!-- <div class="col-md-4" ng-repeat="actor in actors | filter: searchText | filter: filterBirthMonth | orderBy: orderProp" ng-click="toggleActSelected(actor)"> -->
-    
-            <div class="col-md-4" ng-repeat="reader in readers | filter: searchBook | filter: searchAuthor">
-    
-              <div class="card text-center" ng-class="{selected: actor.selected}" >
-                <div class="card-body" >
-                  <!-- <img class="card-img-top" src="{{book.coverImg}}" alt="{{book.name}}"> -->
-                  <h4 class="card-title" >פרטי הקורא</h4>
-                  <p>ת.ז: {{reader.id}}</p>
-                  <p>שם הקורא: {{reader.fname}} {{reader.lname}}</p>
-                                 
-                  <p>אימייל: {{reader.email}}</p>
-                  <p>טלפון: {{reader.phone}}</p>
-                  <p>כתובת: {{reader.address}}</p>
-    
 
-                  <!-- <div class="col-md-4" ng-repeat="reader in readers | filter: searchBook | filter: searchAuthor">
-    
-                        <div class="card text-center" ng-class="{selected: actor.selected}" >
-                          <div class="card-body" > -->
-                            <!-- <img class="card-img-top" src="{{book.coverImg}}" alt="{{book.name}}"> -->
-
-
-
-
-
-                            <!-- <h4 class="card-title" >פרטי השאלה</h4>
-                            <p>ת.ז: {{borrow.id}}</p>
-                            <p>שם הקורא: {{reader.fname}} {{reader.lname}}</p>
-                                           
-                            <p>אימייל: {{reader.email}}</p>
-                            <p>טלפון: {{reader.phone}}</p>
-                            <p>כתובת: {{reader.address}}</p> -->
-              
-
-
-                            
-                        </div>
-                      </div>
-                    </div>  -->
-
-
-
-
-              </div>
+    <div class="readers-list">
+        <div ng-repeat="reader in readers | filter: searchBook | filter: searchAuthor">
+            <div class="reader-row-header" ng-click="selectReader(reader.id)">
+                <a class="reader-row-link" href="">
+                {{reader.fname}} {{reader.lname}} - {{reader.id}}
+            </a>
             </div>
-          </div> 
+            <div ng-show="selectedReaderId === reader.id" class="selected-reader-box">
+                <h4 class="card-title" >{{reader.fname}} {{reader.lname}}</h4>
+                <div><span class="reader-detail">ת.ז:</span>{{reader.id}}</div>
+                <div><span class="reader-detail">אימייל:</span>{{reader.email}}</div>
+                <div><span class="reader-detail">טלפון:</span>{{reader.phone}}</div>
+                <div><span class="reader-detail">כתובת:</span>{{reader.address}}</div>
+            </div>
+        </div>
+    </div>
 
-         </div>
