@@ -9,7 +9,7 @@ app.factory('borrowService', function ($log, $http, $q) {
         this.bookId = plainBorrow.bookId;
         this.readerId = plainBorrow.readerId;
         this.borrowDate = plainBorrow.borrowDate;
-        this.reminderdateSent = plainReader.reminderdateSent;
+        this.reminderdateSent = plainBorrow.reminderdateSent;
     }
 
     function load() {
@@ -43,11 +43,12 @@ app.factory('borrowService', function ($log, $http, $q) {
     function isBorrowed (id) {
         var async = $q.defer();
         var result = false;
-        $http.get("app/data/borrow.json").then(function (response) {
-            // on success  
+        // $http.get("app/data/borrow.json").then(function (response) {
+        load().then(function (response) {
+            // on success
             $log.debug("BOOKAPP: " + JSON.stringify(response));
-            for (var i = 0; i < response.data.length && result === false; i++) {
-                if (id === response.data[i].bookId) {
+            for (var i = 0; i < borrows.length && !result; i++) {
+                if (id === borrows[i].bookId) {
                     result = true;
                 }          
             }
@@ -63,12 +64,13 @@ app.factory('borrowService', function ($log, $http, $q) {
     function getBorrowObj (id) {
         var async = $q.defer();
         var result = false;
-        $http.get("app/data/borrow.json").then(function (response) {
+        // $http.get("app/data/borrow.json").then(function (response) {
+        load().then(function (response) {
             // on success  
             $log.debug("BOOKAPP: " + JSON.stringify(response));
-            for (var i = 0; i < response.data.length; i++) {
-                if (id === response.data[i].id) {
-                    borrowObj = response.data[i];
+            for (var i = 0; i < borrows.length; i++) {
+                if (id === borrows[i].id) {
+                    borrowObj = borrows[i];
                 }          
             }
             async.resolve(borrowObj);
