@@ -4,61 +4,61 @@
     direction: rtl;
     margin: 0;
     padding: 0; 
- }
+}
 
- .lib_logo {
+.lib_logo {
     height: 60px;
     width: 75px;
- }
+}
 
- .col-md-4 {
+.col-md-4 {
     height: 300px;
     width: 140px;  
     margin: 5px;
- }
+}
 
- .col-md-4.book-box {
+.col-md-4.book-box {
     max-width: 330px;
     min-width: 330px;
     margin: 20px 10px 60px 20px;
- }
+}
 
- .catalog-search {
+.catalog-search {
     margin: 30px 50px 10px 0;
- }
+}
 
- .card.book-card {
+.card.book-card {
     border: 2px solid #bad2f7;
- }
+}
 
- .card-img-top {
+.card-img-top {
     border: 1px solid black;
     height: 200px;
     width: 125px;
     margin: 5px;
- }
+}
 
- .card-img-top-big {
+.card-img-top-big {
     height: 400px;
     width: 250px;
- }
+}
 
- .single-book-details {
+.single-book-details {
     display: inline-block;
     vertical-align: top;
     padding: 20px 80px;
     font-size: 20px;
- }
+}
 
 .single-book-detail-label {
     width: 100px;
     display: inline-block;
 }
 
- .navbar.top-navbar {
+.navbar.top-navbar {
     background-color: #e2edff;
     border-bottom: 1px solid #bad2f7;
- }
+}
 
 .navbar-light .navbar-nav .nav-link {
     color: #3d7fc5;
@@ -76,10 +76,10 @@
     padding-top: 15px;
 }
 
- .card-title.book-name {
+.card-title.book-name {
     color: #3d7fc5;
     font-weight: bold;
- }
+}
 
 .card-title.author {
     color: #999;
@@ -112,7 +112,7 @@
 
 .row {
     margin-right: 20px;
- }
+}
 
 .search-label {
     width: 170px;
@@ -277,3 +277,21 @@
     margin-bottom: 5px;
 }
 
+.lib-details-box {
+    color: #3d7fc5;
+    border: 2px solid #bad2f7;
+    height: 500px;
+    width: 500px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.lib-details-title {
+    font-size: 20px;
+    padding: 30px 0 30px 0; 
+}
+
+.lib-details-content {
+    margin-right: 100px;
+    text-align: center;
+}
