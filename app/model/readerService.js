@@ -46,12 +46,12 @@ app.factory('readerService', function ($log, $http, $q) {
 
     function getReaderObj (id) {
         var async = $q.defer();
-        $http.get("app/data/users.json").then(function (response) {
+        load().then(function (response) {
             // on success  
             $log.debug("BOOKAPP: " + JSON.stringify(response));
-            for (var i = 0; i < response.data.length; i++) {
-                if (id === response.data[i].borrowId) {
-                    readerObj = response.data[i];
+            for (var i = 0; i < readers.length; i++) {
+                if (id === readers[i].borrowId) {
+                    readerObj = readers[i];
                 }          
             }
             async.resolve(readerObj);

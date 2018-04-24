@@ -12,7 +12,7 @@ app.factory('borrowService', function ($log, $http, $q) {
         this.reminderdateSent = plainReader.reminderdateSent;
     }
 
-    function load(user) {
+    function load() {
         var async = $q.defer();
 
         // Checking if the borrows were ever loaded
