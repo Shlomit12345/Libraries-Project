@@ -23,8 +23,8 @@ app.config(function($routeProvider) {
           controller: 'readersCtrl'
         })
         .when("/libdetails", {
-          templateUrl : "app/libdetails/libDetails.html"//,
-          // controller: 'readersCtrl'
+          templateUrl : "app/libdetails/libDetails.html",
+          controller: 'libDetailsCtrl'
         })
         .otherwise({
           redirectTo: "/"

@@ -1,5 +1,9 @@
 app.controller('navbarCtrl', function($scope, activeUserService, $location) {
     
+    if (!activeUserService.isLoggedIn()) {
+		return;
+    }
+    
     $scope.logout = function() {
         activeUserService.logout();
         $location.path('/');

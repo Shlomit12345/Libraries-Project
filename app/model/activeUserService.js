@@ -39,11 +39,11 @@ app.factory("activeUserService", function($http, $log, $q) {
             for (var i = 0; i < users.length; i++) {
                 if (users[i].id == idNum && users[i].password == pwd) {
                     activeUser = users[i];
-                        return true;
-                    }
+                    return true;
                 }
-                return false;
             }
+            return false;
+        }
                  
         function getUser() {
             return activeUser;
