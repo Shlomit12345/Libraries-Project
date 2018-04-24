@@ -15,17 +15,19 @@
             <p>תאריך השאלה: {{borrowObj.borrowDate}}</p>
             <p>תאריך שליחת תזכורת: {{borrowObj.reminderdateSent}}</p>
         </div>
-
-        <div ng-show="book.notBorrowed" class="borrowing-title">השאלת הספר לקורא</div>
-        <div ng-show="book.notBorrowed">
-            <label for="searchreaderId">ת.ז קורא:</label>
-            <input class="borrower-id-input" type="text" id="searchreaderId" ng-model="borrowingReaderId">
-        </div>
-        <div>
-            <button ng-show="book.borrowed" ng-click="addActor(fNameValue, lNameValue, dateValue, imgValue)" class="btn btn-lg borrowing-btn return" role="button">החזרה</button>
-        </div>
-        <div>
-            <button ng-show="book.notBorrowed" ng-click="addActor(fNameValue, lNameValue, dateValue, imgValue)" class="btn btn-lg borrowing-btn borrow" role="button">השאלה</buttona>
+    
+        <div ng-show="isLibrarian">
+            <div ng-show="book.notBorrowed" class="borrowing-title">השאלת הספר לקורא</div>
+            <div ng-show="book.notBorrowed">
+                <label for="searchreaderId">ת.ז קורא:</label>
+                <input class="borrower-id-input" type="text" id="searchreaderId" ng-model="borrowingReaderId">
+            </div>
+            <div>
+                <button ng-show="book.borrowed" ng-click="addActor(fNameValue, lNameValue, dateValue, imgValue)" class="btn btn-lg borrowing-btn return" role="button">החזרה</button>
+            </div>
+            <div>
+                <button ng-show="book.notBorrowed" ng-click="addActor(fNameValue, lNameValue, dateValue, imgValue)" class="btn btn-lg borrowing-btn borrow" role="button">השאלה</buttona>
+            </div>
         </div>
     </div>
 </div>
