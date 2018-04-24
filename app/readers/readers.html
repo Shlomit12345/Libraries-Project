@@ -22,7 +22,7 @@
     <br> -->
 
     <div class="readers-list">
-        <div ng-repeat="reader in readers | filter: searchBook | filter: searchAuthor">
+        <div ng-repeat="reader in readers | filter: {fname: searchReaderFName, lname: searchReaderLName, id: searchreaderId }">
             <div class="reader-row-header" ng-click="selectReader(reader.id)">
                 <a class="reader-row-link" href="">{{reader.fname}} {{reader.lname}} - {{reader.id}}</a>
             </div>
