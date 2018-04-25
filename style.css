@@ -23,7 +23,12 @@
     margin: 20px 10px 60px 20px;
 }
 
-.catalog-search {
+.catalog-search-book {
+    margin: 30px 50px 10px 0;
+    display: inline-block;
+}
+
+.catalog-search-reader {
     margin: 30px 50px 10px 0;
 }
 
@@ -174,6 +179,11 @@
     margin-right: 4px;
 }
 
+.add-book {
+    margin-right: 50px;
+    display: inline-block;
+}
+
 .btn.btn-lg.borrowing-btn:hover {
     background: #6393c5;
     color: white;
@@ -190,8 +200,49 @@
     color: #3d7fc5;
 }
 
+.new-book-label {
+    width: 100px;
+}
+
+.new-book-form-content {
+    text-align: center;
+}
+
 .borrower-id-input {
     width: 180px;
+}
+
+.new-book-form {
+    width: 100%;
+    padding: 20px;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    display: inline-block;
+    height: 500px;
+}
+
+.new-book-title {
+    text-align: center;
+    padding: 30px;
+}
+
+.new-book-input {
+    width: 250px;
+    margin: 10px;
+}
+
+.new-book-div-button {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-align: left;
+    margin-left: 90px;
+}
+
+.new-book-button {
+    padding-right: 30px;
+    padding-left: 30px;
+    display: inline-block;
+    margin-left: 15px;
 }
 
 .login-welcome {

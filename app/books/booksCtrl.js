@@ -13,4 +13,11 @@ app.controller('booksCtrl', function($scope, activeUserService, $location, bookS
 	$scope.openBook = function(book) {
 		$location.path('/books/' + $scope.books.indexOf(book));
 	}
+
+    if (activeUserService.getUser().role === "ספרנית") {
+        $scope.isLibrarian = true;
+    } else {
+        $scope.isLibrarian = false;
+	}
+
 });

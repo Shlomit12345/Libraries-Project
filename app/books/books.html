@@ -2,15 +2,16 @@
 
 <div class="container catalog-title">קטלוג הספרים</div>
 
-<div class="catalog-search">
-	<span class="search-part">חיפוש:</span>
-	<span class="search-part">
-    <input class="search-input" placeholder="לפי שם" type="text" id="searchBookName" ng-model="searchBook">
-  </span>
-	<span class="search-part">
-    <input class="search-input" placeholder="לפי מחבר" type="text" id="searchAuthor" ng-model="searchAuthor">
-  </span>
-</div>
+<div>
+  <div class="catalog-search-book">
+    <span class="search-part">חיפוש:</span>
+    <span class="search-part">
+      <input class="search-input" placeholder="לפי שם" type="text" id="searchBookName" ng-model="searchBook">
+    </span>
+    <span class="search-part">
+      <input class="search-input" placeholder="לפי מחבר" type="text" id="searchAuthor" ng-model="searchAuthor">
+    </span>
+  </div>
 <!-- <p>מיין לפי:</p>
 <select class="catalog-selection" ng-model="orderProp">
    <option value="name">שם הספר</option>
@@ -19,6 +20,43 @@
 <br>
 <br>
 <br> -->
+
+  <div class="add-book">
+      <button ng-show="isLibrarian" data-toggle="modal" data-target="#myModal" ng-click="addActor(fNameValue, lNameValue, dateValue, imgValue)" class="btn btn-lg borrowing-btn return" role="button">הוסף ספר</button>
+  </div>
+</div>
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form class="new-book-form" action="/action_page.php">
+          <div class="new-book-form-content">
+            <h2 class="login-title new-book-title">פרטי ספר חדש</h2>
+            <div class="form-group">
+              <label class="new-book-label" for="bookname">שם הספר:</label>
+              <input  class="new-book-input" type="text" name="bookname" class="form-control" id="bookname" ng-model="bookname">
+            </div>
+            <div class="form-group">
+              <label class="new-book-label" for="bookauthor">שם הסופר:</label>
+              <input class="new-book-input" type="text" name="bookauthor" class="form-control" id="bookauthor" ng-model="bookauthor">
+            </div>
+            <div class="form-group">
+              <label class="new-book-label" for="coverimg">קישור לתמונה:</label>
+              <input class="new-book-input" type="text" name="coverimg" class="form-control" id="coverimg" ng-model="coverimg">
+            </div>
+            <div class="form-group">
+              <label class="new-book-label" for="publish">הוצאה:</label>
+              <input class="new-book-input" type="text" name="publish" class="form-control" id="publish" ng-model="publish">
+            </div>
+            <div class="new-book-div-button">
+              <button type="submit" class="btn btn-primary new-book-button" ng-click="login()">שמירה</button>
+              <button type="button" class="btn new-book-button"  data-dismiss="modal" ng-click="">ביטול</button>
+            </div>
+          </div>
+        </form> 
+      </div>
+    </div>
+  </div>
 
 <div class="row">
 	<!-- <div class="col-md-4" ng-repeat="actor in actors | filter: searchText | filter: filterBirthMonth | orderBy: orderProp" ng-click="toggleActSelected(actor)"> -->
