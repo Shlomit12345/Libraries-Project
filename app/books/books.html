@@ -22,15 +22,20 @@
 <br> -->
 
   <div class="add-book">
-      <button ng-show="isLibrarian" data-toggle="modal" data-target="#myModal" ng-click="addActor(fNameValue, lNameValue, dateValue, imgValue)" class="btn btn-lg borrowing-btn return" role="button">הוסף ספר</button>
+    <button ng-show="isLibrarian" data-toggle="modal" data-target="#myModal" class="btn btn-lg borrowing-btn return" role="button">הוסף ספר</button>
   </div>
 </div>
 
-<div class="modal fade" id="myModal" role="dialog">
+<div class="modal fade my-modal" id="myModal" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
-        <form class="new-book-form" action="/action_page.php">
+        <form class="new-book-form">
           <div class="new-book-form-content">
+            <div class="new-book-x">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
             <h2 class="login-title new-book-title">פרטי ספר חדש</h2>
             <div class="form-group">
               <label class="new-book-label" for="bookname">שם הספר:</label>
@@ -49,7 +54,7 @@
               <input class="new-book-input" type="text" name="publish" class="form-control" id="publish" ng-model="publish">
             </div>
             <div class="new-book-div-button">
-              <button type="submit" class="btn btn-primary new-book-button" ng-click="login()">שמירה</button>
+              <button type="button" class="btn btn-primary new-book-button" ng-click="saveBook()">שמירה</button>
               <button type="button" class="btn new-book-button"  data-dismiss="modal" ng-click="">ביטול</button>
             </div>
           </div>

@@ -41,8 +41,21 @@ app.factory('bookService', function ($log, $http, $q, borrowService) {
             return async.promise;
         }
 
+        function saveBook (bookname, bookauthor, coverimg, publish) { 
+            var index = books.length;
+                         books.push({     
+                            "id": "006",
+                            "coverImg": "app/images/lib_logo.jpg",
+                            "name": bookname,
+                            "author": bookauthor,
+                            "publishingHouse": publish,
+                            "borrowId": null
+                        });
+        }
+
         return {
             books: books,
+            saveBook: saveBook,
             load: load
         }
     }) 
