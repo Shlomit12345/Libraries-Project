@@ -1,4 +1,4 @@
-app.factory('borrowService', function ($log, $http, $q) {
+app.factory('borrowService', function ($log, $http, $q, $location) {
     
     var borrows = [];
     var wasEverLoaded = false;
@@ -14,7 +14,6 @@ app.factory('borrowService', function ($log, $http, $q) {
 
     function load() {
         var async = $q.defer();
-
         // Checking if the borrows were ever loaded
         if (wasEverLoaded) {
             // Immediatly resolving the promise since borrows are already available
@@ -43,11 +42,10 @@ app.factory('borrowService', function ($log, $http, $q) {
     function isBorrowed (id) {
         var async = $q.defer();
         var result = false;
-        // $http.get("app/data/borrow.json").then(function (response) {
         load().then(function (response) {
             // on success
             $log.debug("BOOKAPP: " + JSON.stringify(response));
-            for (var i = 0; i < borrows.length && !result; i++) {
+            for (var i = 0; i < borrows.length && !result; i++) {        
                 if (id === borrows[i].bookId) {
                     result = true;
                 }          
@@ -82,10 +80,37 @@ app.factory('borrowService', function ($log, $http, $q) {
         return async.promise;
     }
 
+    function borrowReturnBook (borrowId) {
+        for (var i = 0; i < borrows.length; i++) {
+            if (borrows[i].id === borrowId) {
+                borrows.splice(i, 1);
+            }
+        }
+    }
+
+    function borrowBorrowBook (bookId, userId) { 
+        var borrowId = borrows.length + 1;
+        var borrowD = new Date().getDate();
+        var borrowM = new Date().getMonth();
+        borrowM ++;
+        var borrowY = new Date().getFullYear();
+        var fullDate = borrowD+"/"+borrowM+"/"+borrowY;
+        borrows.push({     
+             "id": borrowId,
+             "bookId": bookId,
+             "readerId": userId,
+             "borrowDate": fullDate,
+             "reminderdateSent": null
+        });
+        return borrowId;
+    }
+
     return {
         borrows: borrows,
         load: load,
         isBorrowed: isBorrowed,
-        getBorrowObj: getBorrowObj
+        getBorrowObj: getBorrowObj,
+        borrowReturnBook: borrowReturnBook,
+        borrowBorrowBook: borrowBorrowBook
     }
 }) 

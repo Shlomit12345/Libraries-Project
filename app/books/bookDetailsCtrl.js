@@ -40,4 +40,22 @@ app.controller("bookDetailsCtrl", function ($scope, $routeParams, bookService, b
             })
         }
     })
+
+    $scope.returnBook = function(bookName, bookAuthor, userId, bookBorrowId) {
+        bookService.bookReturnBook(bookName, bookAuthor);
+        borrowService.borrowReturnBook(bookBorrowId);
+        readerService.readerReturnBook(userId);
+        $scope.book.borrowed = false;
+        $scope.book.notBorrowed = true;
+    }
+
+    $scope.borrowABook = function(bookName, bookAuthor, bookId, userId) {
+        borrowIndex = borrowService.borrowBorrowBook(bookId, userId);
+        bookService.bookBorrowBook(bookId, borrowIndex);
+        readerService.readerBorrowBook(userId, borrowIndex);
+        $scope.book.borrowed = true;
+        $scope.book.notBorrowed = false;
+    }
+    
+
 });

@@ -43,19 +43,39 @@ app.factory('bookService', function ($log, $http, $q, borrowService) {
 
         function saveBook (bookname, bookauthor, coverimg, publish) { 
             var index = books.length;
-                         books.push({     
-                            "id": "006",
-                            "coverImg": "app/images/lib_logo.jpg",
-                            "name": bookname,
-                            "author": bookauthor,
-                            "publishingHouse": publish,
-                            "borrowId": null
-                        });
+            books.push({     
+                "id": index,
+                "coverImg": "app/images/lib_logo.jpg",
+                "name": bookname,
+                "author": bookauthor,
+                "publishingHouse": publish,
+                "borrowId": null
+            });
+        }
+
+        function bookReturnBook (bookName, bookAuthor) { 
+            for (var i = 0; i < books.length; i++) {
+                if (books[i].name === bookName && books[i].author === bookAuthor) {
+                    books[i].borrowId = null;
+                }
+            }
+        }
+
+        function bookBorrowBook (bookId, borrowId) {
+            flag = 0;
+            for (var i = 0; i < books.length && flag === 0; i++) {
+                if (books[i].id === bookId) {
+                    books[i].borrowId = borrowId;
+                    flag = 1;
+                }
+            }
         }
 
         return {
             books: books,
             saveBook: saveBook,
+            bookReturnBook: bookReturnBook,
+            bookBorrowBook: bookBorrowBook,
             load: load
         }
     }) 

@@ -36,8 +36,10 @@ app.factory("activeUserService", function($http, $log, $q) {
         // This function will update the active user property with the logged in user
         // Will return true in case of successfull login. otherwise return false
         function login(idNum, pwd) {
+            //idNum = "556677";
+            //pwd = "556677";
             for (var i = 0; i < users.length; i++) {
-                if (users[i].id == idNum && users[i].password == pwd) {
+                if (users[i].id === idNum && users[i].password === pwd) {
                     activeUser = users[i];
                     return true;
                 }

@@ -23,10 +23,10 @@
                 <input class="borrower-id-input" type="text" id="searchreaderId" ng-model="borrowingReaderId">
             </div>
             <div>
-                <button ng-show="book.borrowed" ng-click="addActor(fNameValue, lNameValue, dateValue, imgValue)" class="btn btn-lg borrowing-btn return" role="button">החזרה</button>
+                <button ng-show="book.borrowed" ng-click="returnBook(book.name, book.author, readerObj.id, readerObj.borrowId)" class="btn btn-lg borrowing-btn return" role="button">החזרה</button>
             </div>
             <div>
-                <button ng-show="book.notBorrowed" ng-click="addActor(fNameValue, lNameValue, dateValue, imgValue)" class="btn btn-lg borrowing-btn borrow" role="button">השאלה</button>
+                <button ng-show="book.notBorrowed" ng-click="borrowABook(book.name, book.author, book.id, borrowingReaderId)" class="btn btn-lg borrowing-btn borrow" role="button">השאלה</button>
             </div>
         </div>
     </div>

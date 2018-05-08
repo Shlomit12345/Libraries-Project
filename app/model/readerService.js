@@ -1,4 +1,4 @@
-app.factory('readerService', function ($log, $http, $q) {
+app.factory('readerService', function ($log, $http, $q, $location) {
     
     var readers = [];
     var wasEverLoaded = false;
@@ -48,10 +48,12 @@ app.factory('readerService', function ($log, $http, $q) {
         var async = $q.defer();
         load().then(function (response) {
             // on success  
+            flag = 0;    
             $log.debug("BOOKAPP: " + JSON.stringify(response));
-            for (var i = 0; i < readers.length; i++) {
+            for (var i = 0; i < readers.length && flag === 0; i++) {
                 if (id === readers[i].borrowId) {
                     readerObj = readers[i];
+                    flag = 1;
                 }          
             }
             async.resolve(readerObj);
@@ -63,10 +65,32 @@ app.factory('readerService', function ($log, $http, $q) {
         return async.promise;
     }
 
+    function readerReturnBook (userId) {
+        for (var i = 0; i < readers.length; i++) {
+            if (readers[i].id === userId) {
+                readers[i].borrowId = null;
+                $location.path("/books");
+            }
+        }
+    }
+
+    function readerBorrowBook (userId, borrowId) {
+        flag = 0;
+        for (var i = 0; i < readers.length && flag === 0; i++) {
+            if (readers[i].id === userId) {
+                readers[i].borrowId = borrowId;
+                flag = 1;
+            }
+        }  
+        $location.path("/books");
+    }
+
     return {
         readers: readers,
         load: load,
-        getReaderObj: getReaderObj
+        getReaderObj: getReaderObj,
+        readerReturnBook: readerReturnBook,
+        readerBorrowBook: readerBorrowBook
     }
 
 }) 
