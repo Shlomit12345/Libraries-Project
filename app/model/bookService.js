@@ -43,9 +43,15 @@ app.factory('bookService', function ($log, $http, $q, borrowService) {
 
         function saveBook (bookname, bookauthor, coverimg, publish) { 
             var index = books.length;
+            if (coverimg == null) {
+                var img = "app/images/lib_logo.jpg";
+            } else {
+                var img = coverimg;
+            }
+            
             books.push({     
                 "id": index,
-                "coverImg": "app/images/lib_logo.jpg",
+                "coverImg": img,
                 "name": bookname,
                 "author": bookauthor,
                 "publishingHouse": publish,
