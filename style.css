@@ -305,6 +305,7 @@
     border: 1px solid #ccc;
     height: 35px;
     padding: 5px 10px;
+    clear: right;
 }
 
 .reader-row-link:hover {
@@ -318,12 +319,12 @@
 
 .selected-reader-box {
     background: #f7fbff;
-    border: 1px solid #ccc;
     padding: 5px 10px;
+    float: right;
 }
 
-.reader-detail {
-    width: 130px;
+.selected-reader-details {
+    width: 100px;
     display: inline-block;
     margin-bottom: 5px;
 }
@@ -346,3 +347,8 @@
     margin-right: 100px;
     text-align: center;
 }
+
+.borrowed-books {
+    padding-right: 100px;
+}
+

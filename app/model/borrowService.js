@@ -62,7 +62,6 @@ app.factory('borrowService', function ($log, $http, $q, $location) {
     function getBorrowObj (id) {
         var async = $q.defer();
         var result = false;
-        // $http.get("app/data/borrow.json").then(function (response) {
         load().then(function (response) {
             // on success  
             $log.debug("BOOKAPP: " + JSON.stringify(response));

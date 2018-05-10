@@ -17,21 +17,29 @@
        <option value="name">שם הספר</option>
        <option value="author">שם המחבר</option>
     </select>
-    <br>
-    <br>
     <br> -->
 
     <div class="readers-list">
         <div ng-repeat="reader in readers | filter: {fname: searchReaderFName, lname: searchReaderLName, id: searchreaderId}">
-            <div class="reader-row-header" ng-click="selectReader(reader.id)">
+            <div class="reader-row-header" ng-click="selectReader(reader.id, reader.borrowId)">
                 <a class="reader-row-link" href="">{{reader.fname}} {{reader.lname}} - {{reader.id}}</a>
             </div>
-            <div ng-show="selectedReaderId === reader.id" class="selected-reader-box">
-                <h4 class="card-title" >{{reader.fname}} {{reader.lname}}</h4>
-                <div><span class="reader-detail">ת.ז:</span>{{reader.id}}</div>
-                <div><span class="reader-detail">אימייל:</span>{{reader.email}}</div>
-                <div><span class="reader-detail">טלפון:</span>{{reader.phone}}</div>
-                <div><span class="reader-detail">כתובת:</span>{{reader.address}}</div>
+            <div ng-show="selectedReaderId === reader.id">
+                <div class="selected-reader-box">
+                    <h4 class="card-title" >{{reader.fname}} {{reader.lname}}</h4>
+                    <div><span class="selected-reader-details">ת.ז:</span>{{reader.id}}</div>
+                    <div><span class="selected-reader-details">אימייל:</span>{{reader.email}}</div>
+                    <div><span class="selected-reader-details">טלפון:</span>{{reader.phone}}</div>
+                    <div><span class="selected-reader-details">כתובת:</span>{{reader.address}}</div>
+                </div>
+                <div ng-show="selectedReaderBorrowId != null" class="selected-reader-box borrowed-books">
+                    <h4 class="card-title">ספרים מושאלים <img src="app\images\locked.png"></h4>
+                    <!-- <h4 class="card-title">ספרים מושאלים <img ng-show="book.borrowed" src="app\images\locked.png"></h4> -->
+                    <div><span class="selected-reader-details">שם הספר:</span>{{bookObj.name}}</div>
+                    <div><span class="selected-reader-details">שם הסופר:</span>{{bookObj.author}}</div>
+                    <div><span class="selected-reader-details">תאריך השאלה:</span>{{borrowObj.borrowDate}}</div>
+                    <div><span class="selected-reader-details">תאריך תזכורת:</span>{{borrowObj.reminderdateSent}}</div>
+                </div>
             </div>
         </div>
     </div>

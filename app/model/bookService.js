@@ -41,6 +41,26 @@ app.factory('bookService', function ($log, $http, $q, borrowService) {
             return async.promise;
         }
 
+        function getBookObj (borrowId) {
+            var async = $q.defer();
+            var result = false;
+            load().then(function (response) {
+                // on success  
+                $log.debug("BOOKAPP: " + JSON.stringify(response));
+                for (var i = 0; i < books.length; i++) {
+                    if (borrowId === books[i].borrowId) {
+                        bookObj = books[i];
+                    }          
+                }
+                async.resolve(bookObj);
+            }, function (response) {
+                // on failure
+                $log.error("BOOKAPP: error in getting book json - " + JSON.stringify(response));
+                async.reject();
+            });
+            return async.promise;
+        }
+    
         function saveBook (bookname, bookauthor, coverimg, publish) { 
             var index = books.length;
             if (coverimg == null) {
@@ -79,6 +99,7 @@ app.factory('bookService', function ($log, $http, $q, borrowService) {
 
         return {
             books: books,
+            getBookObj: getBookObj,
             saveBook: saveBook,
             bookReturnBook: bookReturnBook,
             bookBorrowBook: bookBorrowBook,
