@@ -39,11 +39,11 @@
             <h2 class="login-title new-book-title">פרטי ספר חדש</h2>
             <div class="form-group">
               <label class="new-book-label" for="bookname">שם הספר:</label>
-              <input  class="new-book-input" type="text" name="bookname" class="form-control" id="bookname" ng-model="bookname">
+              <input  class="new-book-input" type="text" name="bookname" class="form-control" id="bookname" ng-model="bookname" ng-click="closeError()">
             </div>
             <div class="form-group">
               <label class="new-book-label" for="bookauthor">שם הסופר:</label>
-              <input class="new-book-input" type="text" name="bookauthor" class="form-control" id="bookauthor" ng-model="bookauthor">
+              <input class="new-book-input" type="text" name="bookauthor" class="form-control" id="bookauthor" ng-model="bookauthor" ng-click="closeError()">
             </div>
             <div class="form-group">
               <label class="new-book-label" for="coverimg">קישור לתמונה:</label>
@@ -51,11 +51,14 @@
             </div>
             <div class="form-group">
               <label class="new-book-label" for="publish">הוצאה:</label>
-              <input class="new-book-input" type="text" name="publish" class="form-control" id="publish" ng-model="publish">
+              <input class="new-book-input" type="text" name="publish" class="form-control" id="publish" ng-model="publish" ng-click="closeError()">
             </div>
             <div class="new-book-div-button">
               <button type="button" class="btn btn-primary new-book-button" ng-click="saveBook()">שמירה</button>
               <button type="button" class="btn new-book-button"  data-dismiss="modal" ng-click="">ביטול</button>
+            </div>
+            <div class="alert alert-danger book-name-missing-alert" ng-show="missingBookName">
+              שם הספר, שם הסופר וההוצאה הם שדות חובה
             </div>
           </div>
         </form> 
