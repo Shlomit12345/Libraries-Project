@@ -19,7 +19,6 @@ app.factory('readerService', function ($log, $http, $q, $location) {
 
     function load(user) {
         var async = $q.defer();
-        
         // Checking if the readers were ever loaded
         if (wasEverLoaded) {
             // Immediatly resolving the promise since readers are already available
@@ -74,6 +73,26 @@ app.factory('readerService', function ($log, $http, $q, $location) {
         }
     }
 
+    function IsReaderIdValid (userId) {
+        returnedValue = false;
+        var async = $q.defer();
+        load().then(function (response) {
+            // on success  
+            $log.debug("BOOKAPP: " + JSON.stringify(response));
+            for (var i = 0; i < readers.length; i++) {
+                if (readers[i].id === userId) {
+                    returnedValue = true;
+                }
+            }
+            async.resolve(returnedValue);
+        }, function (response) {
+            // on failure
+            $log.error("BOOKAPP: error in getting borrows json - " + JSON.stringify(response));
+            async.reject();
+        });
+        return async.promise;
+    }
+
     function readerBorrowBook (userId, borrowId) {
         flag = 0;
         for (var i = 0; i < readers.length && flag === 0; i++) {
@@ -89,6 +108,7 @@ app.factory('readerService', function ($log, $http, $q, $location) {
         readers: readers,
         load: load,
         getReaderObj: getReaderObj,
+        IsReaderIdValid: IsReaderIdValid,
         readerReturnBook: readerReturnBook,
         readerBorrowBook: readerBorrowBook
     }

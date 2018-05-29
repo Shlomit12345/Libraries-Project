@@ -50,12 +50,25 @@ app.controller("bookDetailsCtrl", function ($scope, $routeParams, bookService, b
     }
 
     $scope.borrowABook = function(bookName, bookAuthor, bookId, userId) {
-        borrowIndex = borrowService.borrowBorrowBook(bookId, userId);
-        bookService.bookBorrowBook(bookId, borrowIndex);
-        readerService.readerBorrowBook(userId, borrowIndex);
-        $scope.book.borrowed = true;
-        $scope.book.notBorrowed = false;
+        if (userId == null || userId == "") {
+            $scope.missingUserId = true;
+        } else {
+            readerService.IsReaderIdValid(userId).then(function(response){
+                var alreadyHasBorroedBook = borrowService.isUserHasBorrowedBook(userId);
+                if (alreadyHasBorroedBook) {
+                    $scope.UserHasAlreadyBorrowedABook = true;
+                } else {
+                    borrowIndex = borrowService.borrowBorrowBook(bookId, userId);
+                    bookService.bookBorrowBook(bookId, borrowIndex);
+                    readerService.readerBorrowBook(userId, borrowIndex);
+                    $scope.book.borrowed = true;
+                    $scope.book.notBorrowed = false;
+                    $scope.missinguserId = false;
+                    $scope.UserHasAlreadyBorrowedABook = false;
+                }
+            }, function (response) {
+                $scope.missingUserId = true;
+            })
+        }
     }
-    
-
 });

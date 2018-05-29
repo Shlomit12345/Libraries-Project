@@ -59,6 +59,16 @@ app.factory('borrowService', function ($log, $http, $q, $location) {
         return async.promise;
     }
 
+    function isUserHasBorrowedBook (userId) {
+        var result = false;
+        for (var i = 0; i < borrows.length && !result; i++) {   
+            if (userId === borrows[i].readerId) {
+                result = true;
+            }          
+        }
+        return result;
+    }
+
     function getBorrowObj (id) {
         var async = $q.defer();
         var result = false;
@@ -110,6 +120,7 @@ app.factory('borrowService', function ($log, $http, $q, $location) {
         isBorrowed: isBorrowed,
         getBorrowObj: getBorrowObj,
         borrowReturnBook: borrowReturnBook,
-        borrowBorrowBook: borrowBorrowBook
+        borrowBorrowBook: borrowBorrowBook,
+        isUserHasBorrowedBook, isUserHasBorrowedBook
     }
 }) 

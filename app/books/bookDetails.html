@@ -28,6 +28,12 @@
             <div>
                 <button ng-show="book.notBorrowed" ng-click="borrowABook(book.name, book.author, book.id, borrowingReaderId)" class="btn btn-lg borrowing-btn borrow" role="button">השאלה</button>
             </div>
+            <div class="alert alert-danger book-name-missing-alert" ng-show="missingUserId">
+                ת.ז קורא זה לא קיים במערכת
+            </div>
+            <div class="alert alert-danger book-name-missing-alert" ng-show="UserHasAlreadyBorrowedABook">
+                קורא זה עדיין לא החזיר ספר מושאל. כל קורא רשאי להשאיל ספר אחד בלבד.
+            </div>
         </div>
     </div>
 </div>
