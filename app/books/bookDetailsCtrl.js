@@ -50,6 +50,8 @@ app.controller("bookDetailsCtrl", function ($scope, $routeParams, bookService, b
     }
 
     $scope.borrowABook = function(bookName, bookAuthor, bookId, userId) {
+        $scope.missingUserId = false;
+        $scope.UserHasAlreadyBorrowedABook = false;
         if (userId == null || userId == "") {
             $scope.missingUserId = true;
         } else {
@@ -64,8 +66,6 @@ app.controller("bookDetailsCtrl", function ($scope, $routeParams, bookService, b
                         readerService.readerBorrowBook(userId, borrowIndex);
                         $scope.book.borrowed = true;
                         $scope.book.notBorrowed = false;
-                        $scope.missinguserId = false;
-                        $scope.UserHasAlreadyBorrowedABook = false;
                     }
                 } else {
                     $scope.missingUserId = true;

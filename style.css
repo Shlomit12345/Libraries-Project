@@ -352,6 +352,10 @@
     padding-right: 100px;
 }
 
+.book-missing-alert-box {
+    width: 340px;
+}
+
 .book-name-missing-alert {
     text-align: center;
 }
